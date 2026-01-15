@@ -1,0 +1,129 @@
+<div id="UserManagementPage">
+
+    <!--Navbar, entnommen und modifiziert von: https://getbootstrap.com/docs/5.3/components/navbar/ -->
+    <nav id="TopMenu" class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+        <a class="navbar-brand" id="LinkRoot" href="#">WE1-SPA</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" id="LinkImpressum" href="#">Impressum</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="LinkUserManagement" href="#">User Management</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" id="LinkLogout" href="#">Logout</a>
+            </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+
+    <!-- Usermanagemtn Page Content -->
+    <div class="container mt-5">
+    <h1 class="mb-4">Usermanagement</h1>
+
+    <!-- Model entnommen und modifiziert von: https://getbootstrap.com/docs/5.0/components/modal/ -->
+    <!-- Button trigger modal -->
+    <button id="ButtonAddUser" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
+      Add User
+    </button>
+
+    <!-- Modal -->
+    <div id="addUserModal" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add User</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="FormAddUser">
+               <div class="form-group">
+                  <label for="FormAddUserUsername">Username</label>
+                  <input id="FormAddUserUsername" type="text" class="form-control" placeholder="Username">
+              </div>
+
+              <div class="form-group">
+                  <label for="FormAddUserPassword">Password</label>
+                  <input id="FormAddUserPassword" type="password" class="form-control" placeholder="Password">
+              </div>
+
+              <div class="form-group">
+              <label for="FormAddUserFirstName">First Name</label>
+              <input id="FormAddUserFirstName" type="text" class="form-control" placeholder="First Name">
+              </div>
+
+              <div class="form-group">
+                  <label for="FormAddUserLastName">Last Name</label>
+                  <input id="FormAddUserLastName" type="text" class="form-control" placeholder="Last Name">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button id="FormAddUserCancel" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button id="FormAddUserSubmit" type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit User Modal -->
+    <div id="editUserModal" class="modal fade" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editModalLabel">Edit User</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="FormEditUser">
+              <div class="form-group">
+                <label for="FormEditUserUsername">Username</label>
+                <input id="FormEditUserUsername" type="text" class="form-control" readonly>
+              </div>
+              <div class="form-group">
+                <label for="FormEditUserPassword">Password</label>
+                <input id="FormEditUserPassword" type="password" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="FormEditUserFirstName">First Name</label>
+                <input id="FormEditUserFirstName" type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="FormEditUserLastName">Last Name</label>
+                <input id="FormEditUserLastName" type="text" class="form-control">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button id="FormEditUserCancel" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button id="FormEditUserSubmit" type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <table id="TableUsers" class="table">
+      <thead>
+        <tr>
+          <th scope="col">UserID</th>
+          <th scope="col">Firstname</th>
+          <th scope="col">Lastname</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody id="TableUsersBody">
+      </tbody>
+    </table>
+  </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</div>
